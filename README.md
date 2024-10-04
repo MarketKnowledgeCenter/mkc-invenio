@@ -1,8 +1,14 @@
 # mkc sandbox
 
-Welcome to your InvenioRDM instance.
+## Getting started - coca's notes
+You have to be using `python3.9` and `node18`. And then you run:
+```console
+invenio-cli containers start --lock --build --setup
+```
 
-## Getting started
+and it should open perfectly in the port `80` and `443`
+
+## Getting started - Invenio
 
 Run the following commands in order to start your new InvenioRDM instance:
 
