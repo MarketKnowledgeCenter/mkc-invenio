@@ -2,8 +2,8 @@
 
 ## Getting started - coca's notes
 You have to be using 
-* `python3.9` (you can use it with pyenv)
-* `node18` (you can use it with nvm)
+* `python3.9` (you can change your python version with pyenv)
+* `node 18 and npm 10.7.0` (you can change your node and npm version with nvm)
 * and `docker compose` plugin
 
 And then you run:
