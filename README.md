@@ -1,7 +1,12 @@
 # mkc sandbox
 
 ## Getting started - coca's notes
-You have to be using `python3.9` and `node18`. And then you run:
+You have to be using 
+* `python3.9` (you can use it with pyenv)
+* `node18` (you can use it with nvm)
+* and `docker compose` plugin
+
+And then you run:
 ```console
 invenio-cli containers start --lock --build --setup
 ```
