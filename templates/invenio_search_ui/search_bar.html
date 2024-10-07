@@ -1,0 +1,14 @@
+{# templates/invenio_search_ui/search_bar.html #}
+{% extends "invenio_search_ui/search_bar.html" %}
+
+{% block search_dropdown %}
+<div class="dropdown-menu" aria-labelledby="search-dropdown">
+  <h6 class="dropdown-header">Buscar por:</h6>
+  <a class="dropdown-item" href="#" data-search-type="title">Título</a>
+  <a class="dropdown-item" href="#" data-search-type="author">Autor</a>
+  <a class="dropdown-item" href="#" data-search-type="keyword">Palabra clave</a>
+  <a class="dropdown-item" href="#" data-search-type="year">Año</a>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="{{ url_for('invenio_search_ui.search') }}">Búsqueda avanzada</a>
+</div>
+{% endblock %}
