@@ -13,6 +13,18 @@ invenio-cli containers start --lock --build --setup
 
 and it should open perfectly in the port `80` and `443`
 
+If no changes were made to the application and you need to quickly start the services run:
+```console
+invenio-cli containers start
+```
+or if you need to stop them
+```console
+invenio-cli containers stop
+```
+If you need to connect to a specific service to access the invenio modules commands such as invenio records or invenio access, use
+```console
+docker exec -it service-name /bin/bash
+```
 ## Getting started - Invenio
 
 Run the following commands in order to start your new InvenioRDM instance:
