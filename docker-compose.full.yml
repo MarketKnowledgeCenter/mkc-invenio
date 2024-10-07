@@ -44,10 +44,10 @@ services:
     extends:
       file: docker-services.yml
       service: pgadmin
-  s3:
-    extends:
-      file: docker-services.yml
-      service: s3
+#  s3:
+#    extends:
+#      file: docker-services.yml
+#      service: s3
   # Frontend
   frontend:
     extends:
