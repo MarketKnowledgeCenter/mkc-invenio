@@ -2,7 +2,7 @@ name: Publish Docker Image from main
 
 permissions:
   contents: read
-  package: write
+  packages: write
 
 on:
     push:
