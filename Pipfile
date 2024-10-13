@@ -13,6 +13,7 @@ flask-admin = "==1.6.1"
 uwsgi = ">=2.0"
 uwsgitop = ">=0.11"
 uwsgi-tools = ">=1.1.1"
+markupsafe = "==2.1.1"
 
 [requires]
 python_version = "3.9"
