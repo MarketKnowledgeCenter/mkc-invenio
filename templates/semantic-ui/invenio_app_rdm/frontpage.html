@@ -1,0 +1,181 @@
+{%- extends "invenio_theme/frontpage.html" %}
+
+{%- block page_header %}
+{%- include "invenio_app_rdm/header_frontpage.html" %}
+{%- endblock page_header %}
+
+{%- block page_body %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .mkc-container {
+        min-height: calc(100vh - var(--header-height));
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(to bottom, #EFF6FF, #FFFFFF);
+    }
+
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+        color: #1E40AF;
+        margin-bottom: 2rem;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 42rem;
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .search-input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: 1px solid #E5E7EB;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+    }
+
+    .search-btn {
+        padding: 0.75rem;
+        background: #1E40AF;
+        border: none;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        color: white;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .feature-title {
+        color: #1E40AF;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-title a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .feature-description {
+        color: #4B5563;
+        line-height: 1.5;
+    }
+
+    .partners-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .partner-logo {
+        height: auto;
+        max-height: 100px;
+        width: auto;
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .partners-section {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<div class="mkc-container">
+    <main class="main-content">
+        <p class="description" style="max-width: 800px; color: #4B5563;">
+            <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong> 
+            en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>.
+            Aquí usted puede:
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3 class="feature-title">
+                    <a href="{{ url_for('invenio_search_ui.search') }}">Explorar y Consultar</a>
+                </h3>
+                <p class="feature-description">
+                    Acceda a reportes y estudios de mercado claves.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="feature-title">
+                    <a href="{{ url_for('invenio_app_rdm_records.deposit_create') }}">Contribuir</a>
+                </h3>
+                <p class="feature-description">
+                    Publique sus investigaciones y comparta el conocimiento con la comunidad.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="feature-title">
+                    <a href="{{ url_for('invenio_communities.communities_frontpage') }}">Unirse a una comunidad</a>
+                </h3>
+                <p class="feature-description">
+                    Conecta con otros profesionales y amplia su red de conocimiento.
+                </p>
+            </div>
+        </div>
+
+        <div class="partners-section">
+            <a href="https://www.saimo.org.ar" target="_blank">
+                <img src="../../../static/images/saimo.png" alt="SAIMO" class="partner-logo">
+            </a>
+            <a href="https://www.austral.edu.ar/" target="_blank">
+                <img src="../../../static/images/austral.jpg" alt="Universidad Austral" class="partner-logo">
+            </a>
+        </div>
+    </main>
+</div>
+{%- endblock page_body %}
