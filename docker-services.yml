@@ -5,7 +5,7 @@ services:
       context: ./
       args:
         - ENVIRONMENT=DEV
-    image: mkc-invenio
+    image: mkc-sandbox
     restart: "unless-stopped"
     environment:
       - "INVENIO_ACCOUNTS_SESSION_REDIS_URL=redis://cache:6379/1"
@@ -17,7 +17,7 @@ services:
       - "INVENIO_COMMUNITIES_IDENTITIES_CACHE_REDIS_URL=redis://cache:6379/4"
       - "INVENIO_SEARCH_HOSTS=['search:9200']"
       - "INVENIO_SECRET_KEY=CHANGE_ME"
-      - "INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://mkc-invenio:mkc-invenio@db/mkc-invenio"
+      - "INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://mkc-sandbox:mkc-sandbox@db/mkc-sandbox"
       - "INVENIO_WSGI_PROXIES=2"
       - "INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3"
       - "S3_ENDPOINT_URL=https://0236038de169a8251e3492c5d72e7d02.r2.cloudflarestorage.com"
@@ -27,7 +27,7 @@ services:
       - "S3_REGION_NAME=us-east-1"
   frontend:
     build: ./docker/nginx/
-    image: mkc-invenio-frontend
+    image: mkc-sandbox-frontend
     restart: "unless-stopped"
     ports:
       - "80"
@@ -42,9 +42,9 @@ services:
     image: postgres:12.4
     restart: "unless-stopped"
     environment:
-      - "POSTGRES_USER=mkc-invenio"
-      - "POSTGRES_PASSWORD=mkc-invenio"
-      - "POSTGRES_DB=mkc-invenio"
+      - "POSTGRES_USER=mkc-sandbox"
+      - "POSTGRES_PASSWORD=mkc-sandbox"
+      - "POSTGRES_DB=mkc-sandbox"
     ports:
       - "5432:5432"
 
