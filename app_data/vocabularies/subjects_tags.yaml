@@ -1,0 +1,75 @@
+- id: "Marketing"
+  scheme: Tags
+  subject: "Marketing"
+
+- id: "Ventas"
+  scheme: Tags
+  subject: "Ventas"
+
+- id: "Consumidor"
+  scheme: Tags
+  subject: "Consumidor"
+
+- id: "Demografía"
+  scheme: Tags
+  subject: "Demografía"
+
+- id: "Comportamiento"
+  scheme: Tags
+  subject: "Comportamiento del consumidor"
+
+- id: "Competencia"
+  scheme: Tags
+  subject: "Competencia"
+
+- id: "Innovación"
+  scheme: Tags
+  subject: "Innovación"
+
+- id: "Segmentación"
+  scheme: Tags
+  subject: "Segmentación de mercado"
+
+- id: "Tendencias"
+  scheme: Tags
+  subject: "Tendencias del mercado"
+
+- id: "Investigación"
+  scheme: Tags
+  subject: "Investigación de mercado"
+
+- id: "Precio"
+  scheme: Tags
+  subject: "Estrategia de precios"
+
+- id: "Posicionamiento"
+  scheme: Tags
+  subject: "Posicionamiento de marca"
+
+- id: "Publicidad"
+  scheme: Tags
+  subject: "Publicidad"
+
+- id: "Estrategia digital"
+  scheme: Tags
+  subject: "Estrategia digital"
+
+- id: "Satisfacción"
+  scheme: Tags
+  subject: "Satisfacción del cliente"
+
+- id: "Análisis de datos"
+  scheme: Tags
+  subject: "Análisis de datos"
+
+- id: "Lealtad"
+  scheme: Tags
+  subject: "Lealtad de marca"
+
+- id: "Innovación"
+  scheme: Tags
+  subject: "Innovación de productos"
+
+- id: "Distribución"
+  scheme: Tags
+  subject: "Canales de distribución"

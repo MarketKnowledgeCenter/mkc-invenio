@@ -71,6 +71,7 @@ services:
     ports:
       - "5000"
     volumes:
+      - ./app_data/vocabularies:/opt/invenio/app_data/vocabularies
       - static_data:/opt/invenio/var/instance/static
 
   # API Rest Application
@@ -82,6 +83,8 @@ services:
     image: mkc-invenio:latest
     ports:
       - "5000"
+    volumes:
+      - ./app_data/vocabularies:/opt/invenio/app_data/vocabularies
 
   # Worker
   worker:
