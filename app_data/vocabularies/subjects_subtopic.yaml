@@ -1,15 +1,15 @@
-- id: "subtopic1"
-  scheme: Subtopics
+- id: "subtema_1"
+  scheme: Subtema
   subject: "subtopic1"
 
-- id: "subtopic2"
-  scheme: Subtopics
+- id: "subtema_2"
+  scheme: Subtema
   subject: "subtopic2"
 
-- id: "subtopic3"
-  scheme: Subtopics
+- id: "subtema_3"
+  scheme: Subtema
   subject: "subtopic3"
 
-- id: "subtopic4"
-  scheme: Subtopics
+- id: "subtema_4"
+  scheme: Subtema
   subject: "subtopic4"

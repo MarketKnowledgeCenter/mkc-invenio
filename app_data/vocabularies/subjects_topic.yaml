@@ -1,15 +1,15 @@
-- id: "topic1"
-  scheme: Topics
+- id: "tema_1"
+  scheme: Tema
   subject: "topic1"
 
-- id: "topic2"
-  scheme: Topics
+- id: "tema_2"
+  scheme: Tema
   subject: "topic2"
 
-- id: "topic3"
-  scheme: Topics
+- id: "tema_3"
+  scheme: Tema
   subject: "topic3"
 
-- id: "topic4"
-  scheme: Topics
+- id: "tema_4"
+  scheme: Tema
   subject: "topic4"

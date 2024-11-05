@@ -4,11 +4,11 @@ subjects:
     - id: Tags
       name: Tags
       data-file: vocabularies/subjects_tags.yaml
-    - id: Topics
-      name: Topics
+    - id: Tema
+      name: Tema
       data-file: vocabularies/subjects_topic.yaml
-    - id: Subtopics
-      name: Subtopics
+    - id: Subtema
+      name: Subtema
       data-file: vocabularies/subjects_topic.yaml
 resourcetypes:
   pid-type: rsrct
