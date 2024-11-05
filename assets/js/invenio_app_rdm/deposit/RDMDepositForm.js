@@ -24,8 +24,9 @@ import {
     PreviewButton,
     LanguagesField,
     PublicationDateField,
+    ResourceTypeField,
     PublishButton,
-    SubjectsField,
+    EmbargoDateField,
     TitlesField,
     VersionField,
     DepositFormApp,
@@ -55,6 +56,13 @@ export class RDMDepositForm extends Component {
                     ],
                 },
 
+                category: [
+                    { id: "Data & Tecnología", icon: "user", label: "Data & Tecnología", type_name: "Data & Tecnología"},
+                    { id: "Mercado, Economía & Consumo", icon: "user", label: "Mercado, Economía & Consumo", type_name: "Mercado, Economía & Consumo"},
+                    { id: "Marca, Creatividad & Medios", icon: "user", label: "Marca, Creatividad & Medios", type_name: "Marca, Creatividad & Medios"},
+                    { id: "Sociedad & Sotenibilidad", icon: "user", label: "Sociedad & Sotenibilidad", type_name: "Sociedad & Sotenibilidad"},
+                    { id: "Otros", icon: "user", label: "Otros", type_name: "Otros"},
+                ],
                 contributors: {
                     ...this.config.vocabularies.contributors,
                     type: [
@@ -217,6 +225,18 @@ export class RDMDepositForm extends Component {
                                     </Overridable>
 
                                     <Overridable
+                                        id="InvenioAppRdm.Deposit.ResourceTypeField.container"
+                                        vocabularies={this.vocabularies}
+                                        fieldPath="metadata.resource_type"
+                                    >
+                                        <ResourceTypeField
+                                            options={this.vocabularies.metadata.resource_type}
+                                            fieldPath="metadata.resource_type"
+                                            required
+                                        />
+                                    </Overridable>
+
+                                    <Overridable
                                         id="InvenioAppRdm.Deposit.PublicationDateField.container"
                                         fieldPath="metadata.publication_date"
                                     >
@@ -232,8 +252,7 @@ export class RDMDepositForm extends Component {
                                         fieldPath="metadata.title"
                                     >
                                         <TitlesField
-                                            options={this.vocabularies.metadata.titles}
-                                            fieldPath="metadata.title"
+                                            fieldPath={"metadata.title"}
                                             required
                                         />
                                     </Overridable>
@@ -244,12 +263,12 @@ export class RDMDepositForm extends Component {
                                         fieldPath="metadata.category"
                                         record={record}
                                     >
-                                        <SubjectsField
+                                        <ResourceTypeField
+                                            options={this.vocabularies.metadata.category}
                                             label={i18next.t("Category")}
+                                            labelIcon="user"
                                             fieldPath="metadata.category"
-                                            initialOptions={_get(record, "ui.subjects", null)}
-                                            limitToOptions={this.vocabularies.metadata.subjects.limit_to}
-                                            searchOnFocus
+                                            required
                                         />
                                     </Overridable>
 
@@ -259,11 +278,10 @@ export class RDMDepositForm extends Component {
                                         fieldPath="metadata.topic"
                                         record={record}
                                     >
-                                        <SubjectsField
+                                        <TitlesField
+                                            fieldPath={"metadata.topic"}
                                             label={i18next.t("Topic")}
-                                            fieldPath="metadata.topic"
-                                            limitToOptions={this.vocabularies.metadata.subjects.limit_to}
-                                            searchOnFocus
+                                            required
                                         />
                                     </Overridable>
 
@@ -273,12 +291,10 @@ export class RDMDepositForm extends Component {
                                         fieldPath="metadata.subtopic"
                                         record={record}
                                     >
-                                        <SubjectsField
+                                        <TitlesField
+                                            fieldPath={"metadata.subtopic"}
                                             label={i18next.t("Subtopic")}
-                                            fieldPath="metadata.subtopic"
-                                            initialOptions={_get(record, "ui.subjects", null)}
-                                            limitToOptions={this.vocabularies.metadata.subjects.limit_to}
-                                            searchOnFocus
+                                            required
                                         />
                                     </Overridable>
 
