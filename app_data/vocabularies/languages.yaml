@@ -7,24 +7,6 @@
   title:
     en: English
     es: Inglés
-- id: fra
-  props:
-    alpha_2: fr
-  tags:
-  - individual
-  - living
-  title:
-    en: French
-    es: Francés
-- id: ita
-  props:
-    alpha_2: it
-  tags:
-  - individual
-  - living
-  title:
-    en: Italian
-    es: Italiano
 - id: spa
   props:
     alpha_2: es
