@@ -1,0 +1,36 @@
+# users roles
+- email: admin@ejemplo.com
+  username: admin
+  full_name: Administrador
+  active: true
+  confirmed: true
+  password: admin_password
+  roles:
+    - admin
+
+- email: viewer@ejemplo.com
+  username: viewer
+  full_name: Visualizador
+  active: true
+  confirmed: true
+  password: viewer_password
+  roles:
+    - viewer
+
+- email: uploader@ejemplo.com
+  username: uploader
+  full_name: Cargador
+  active: true
+  confirmed: true
+  password: uploader_password
+  roles:
+    - uploader
+
+- email: supervisor@ejemplo.com
+  username: supervisor
+  full_name: Supervisor
+  active: true
+  confirmed: true
+  password: supervisor_password
+  roles:
+    - supervisor

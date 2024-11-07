@@ -97,6 +97,48 @@
         text-decoration: none;
     }
 
+    .description-container {
+        color: #4B5563;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .typed-line {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        opacity: 0;
+        animation: typing 2s steps(40, end) forwards;
+        font-weight: normal;
+    }
+
+    .typed-line.line1 {
+        animation-delay: 0s;
+    }
+
+    .typed-line.line2 {
+        animation-delay: 2s;
+    }
+
+    .typed-line.line3 {
+        animation-delay: 4s;
+        color: #4B5563;
+    }
+
+    @keyframes typing {
+        from { 
+            width: 0;
+            opacity: 1;
+        }
+        to { 
+            width: 100%;
+            opacity: 1;
+        }
+    }
+
     .feature-description {
         color: #4B5563;
         line-height: 1.5;
@@ -133,12 +175,21 @@
 
 <div class="mkc-container">
     <main class="main-content">
-        <p class="description" style="max-width: 800px; color: #4B5563;">
-            <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong> 
-            en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>.
-            Aquí usted puede:
-        </p>
+        <!-- <h1 class="description" style="max-width: 800px; color: #4B5563;">
+            <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong> en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>. Aquí usted puede:
+        </h1> -->
 
+        <div class="description-container">
+            <h2 class="typed-line line1">
+                <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong>
+            </h2>
+            <h2 class="typed-line line2">
+                en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>.
+            </h2>
+        </div>
+        <h2 class="typed-line line3">
+            Aquí usted puede:
+        </h2>
         <div class="features-grid">
             <div class="feature-card">
                 <h3 class="feature-title">
@@ -168,7 +219,7 @@
             </div>
         </div>
 
-        <div class="partners-section">
+        <div class="feature-card">
             <a href="https://www.saimo.org.ar" target="_blank">
                 <img src="../../../static/images/saimo.png" alt="SAIMO" class="partner-logo">
             </a>
