@@ -1,0 +1,15 @@
+html.cover-page {
+  background-color: linear-gradient(to bottom, #EFF6FF, #1E40AF);
+}
+
+.ui.signup.button {
+    background-color: #1E40AF;
+}
+
+.ui.signup.button:hover {
+    background-color: #1E40AF;
+}
+
+.ui.primary.buttons {
+    background-color: #1E40AF;
+}

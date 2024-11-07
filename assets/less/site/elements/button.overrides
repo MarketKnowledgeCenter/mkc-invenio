@@ -1,0 +1,7 @@
+.ui.signup.button {
+    background-color: #1E40AF;
+}
+
+.ui.signup.button:hover {
+    background-color: #1E40AF;
+}
