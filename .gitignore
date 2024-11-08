@@ -72,3 +72,4 @@ data/.minio.sys
 
 # Celery
 celerybeat-schedule
+.env
