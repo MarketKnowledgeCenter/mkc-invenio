@@ -353,7 +353,6 @@ export class RDMDepositForm extends Component {
                                         "metadata.contributors",
                                         "metadata.subjects",
                                         "metadata.languages",
-                                        "metadata.dates",
                                         "metadata.version",
                                         "metadata.publisher",
                                     ]}
@@ -416,18 +415,6 @@ export class RDMDepositForm extends Component {
                                     </Overridable>
 
                                     <Overridable
-                                        id="InvenioAppRdm.Deposit.DateField.container"
-                                        vocabularies={this.vocabularies}
-                                        fieldPath="metadata.dates"
-                                    >
-                                        <DatesField
-                                            fieldPath="metadata.dates"
-                                            options={this.vocabularies.metadata.dates}
-                                            showEmptyValue
-                                        />
-                                    </Overridable>
-
-                                    <Overridable
                                         id="InvenioAppRdm.Deposit.VersionField.container"
                                         fieldPath="metadata.version"
                                     >
@@ -439,164 +426,6 @@ export class RDMDepositForm extends Component {
                                         fieldPath="metadata.publisher"
                                     >
                                         <PublisherField fieldPath="metadata.publisher" />
-                                    </Overridable>
-                                </AccordionField>
-                            </Overridable>
-                            <Overridable
-                                id="InvenioAppRdm.Deposit.AccordionFieldFunding.container"
-                                ui={this.accordionStyle}
-                            >
-                                <AccordionField
-                                    includesPaths={["metadata.funding"]}
-                                    active
-                                    label="Funding"
-                                    ui={this.accordionStyle}
-                                >
-                                    <Overridable
-                                        id="InvenioAppRdm.Deposit.FundingField.container"
-                                        fieldPath="metadata.funding"
-                                    >
-                                        <FundingField
-                                            fieldPath="metadata.funding"
-                                            searchConfig={{
-                                                searchApi: {
-                                                    axios: {
-                                                        headers: {
-                                                            Accept: "application/vnd.inveniordm.v1+json",
-                                                        },
-                                                        url: "/api/awards",
-                                                        withCredentials: false,
-                                                    },
-                                                },
-                                                initialQueryState: {
-                                                    sortBy: "bestmatch",
-                                                    sortOrder: "asc",
-                                                    layout: "list",
-                                                    page: 1,
-                                                    size: 5,
-                                                },
-                                            }}
-                                            label="Awards/Grants"
-                                            labelIcon="money bill alternate outline"
-                                            deserializeAward={(award) => {
-                                                return {
-                                                    title: award.title_l10n,
-                                                    number: award.number,
-                                                    funder: award.funder ?? "",
-                                                    id: award.id,
-                                                    ...(award.identifiers && {
-                                                        identifiers: award.identifiers,
-                                                    }),
-                                                    ...(award.acronym && { acronym: award.acronym }),
-                                                };
-                                            }}
-                                            deserializeFunder={(funder) => {
-                                                return {
-                                                    id: funder.id,
-                                                    name: funder.name,
-                                                    ...(funder.title_l10n && { title: funder.title_l10n }),
-                                                    ...(funder.pid && { pid: funder.pid }),
-                                                    ...(funder.country && { country: funder.country }),
-                                                    ...(funder.country_name && {
-                                                        country_name: funder.country_name,
-                                                    }),
-                                                    ...(funder.identifiers && {
-                                                        identifiers: funder.identifiers,
-                                                    }),
-                                                };
-                                            }}
-                                            computeFundingContents={(funding) => {
-                                                let headerContent,
-                                                    descriptionContent,
-                                                    awardOrFunder = "";
-
-                                                if (funding.funder) {
-                                                    const funderName =
-                                                        funding.funder?.name ??
-                                                        funding.funder?.title ??
-                                                        funding.funder?.id ??
-                                                        "";
-                                                    awardOrFunder = "funder";
-                                                    headerContent = funderName;
-                                                    descriptionContent = "";
-
-                                                    // there cannot be an award without a funder
-                                                    if (funding.award) {
-                                                        const { acronym, title } = funding.award;
-                                                        awardOrFunder = "award";
-                                                        descriptionContent = funderName;
-                                                        headerContent = acronym ? `${acronym} — ${title}` : title;
-                                                    }
-                                                }
-
-                                                return { headerContent, descriptionContent, awardOrFunder };
-                                            }}
-                                        />
-                                    </Overridable>
-                                </AccordionField>
-                            </Overridable>
-                            <Overridable
-                                id="InvenioAppRdm.Deposit.AccordionFieldAlternateIdentifiers.container"
-                                vocabularies={this.vocabularies}
-                            >
-                                <AccordionField
-                                    includesPaths={["metadata.identifiers"]}
-                                    active
-                                    label={i18next.t("Alternate identifiers")}
-                                >
-                                    <Overridable
-                                        id="InvenioAppRdm.Deposit.IdentifiersField.container"
-                                        vocabularies={this.vocabularies}
-                                        fieldPath="metadata.identifiers"
-                                    >
-                                        <IdentifiersField
-                                            fieldPath="metadata.identifiers"
-                                            label={i18next.t("Alternate identifiers")}
-                                            labelIcon="barcode"
-                                            schemeOptions={this.vocabularies.metadata.identifiers.scheme}
-                                            showEmptyValue
-                                        />
-                                    </Overridable>
-                                </AccordionField>
-                            </Overridable>
-
-                            <Overridable
-                                id="InvenioAppRdm.Deposit.AccordionFieldRelatedWorks.container"
-                                vocabularies={this.vocabularies}
-                            >
-                                <AccordionField
-                                    includesPaths={["metadata.related_identifiers"]}
-                                    active
-                                    label={i18next.t("Related works")}
-                                >
-                                    <Overridable
-                                        id="InvenioAppRdm.Deposit.RelatedWorksField.container"
-                                        fieldPath="metadata.related_identifiers"
-                                        vocabularies={this.vocabularies}
-                                    >
-                                        <RelatedWorksField
-                                            fieldPath="metadata.related_identifiers"
-                                            options={this.vocabularies.metadata.identifiers}
-                                            showEmptyValue
-                                        />
-                                    </Overridable>
-                                </AccordionField>
-                            </Overridable>
-                            <Overridable
-                                id="InvenioAppRdm.Deposit.AccordionFieldReferences.container"
-                                vocabularies={this.vocabularies}
-                            >
-                                <AccordionField
-                                    includesPaths={["metadata.references"]}
-                                    active
-                                    label={i18next.t("References")}
-                                >
-                                    <Overridable
-                                        id="InvenioAppRdm.Deposit.ReferencesField.container"
-                                        fieldPath="metadata.references"
-                                        vocabularies={this.vocabularies}
-                                    >
-                                        <ReferencesField fieldPath="metadata.references" showEmptyValue />
                                     </Overridable>
                                 </AccordionField>
                             </Overridable>
