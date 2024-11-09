@@ -4,18 +4,21 @@ subjects:
     - id: Tags
       name: Tags
       data-file: vocabularies/subjects_tags.yaml
-    - id: Topics
-      name: Topics
-      data-file: vocabularies/subjects_topic.yaml
-    - id: Subtopics
-      name: Subtopics
-      data-file: vocabularies/subjects_topic.yaml
+#    - id: Topics
+#      name: Topics
+#      data-file: vocabularies/subjects_topic.yaml
+#    - id: Subtopics
+#      name: Subtopics
+#      data-file: vocabularies/subjects_topic.yaml
 resourcetypes:
   pid-type: rsrct
   data-file: vocabularies/resource_types.yaml
 languages:
   pid-type: lng
   data-file: vocabularies/languages.yaml
+#category:
+#  pid-type: categoryMKC
+#  data-file: vocabularies/categories.jsonl
 # TODO: Uncomment this if you want to have all affiliations with ROR identifiers.
 # affiliations:
 #   pid-type: aff

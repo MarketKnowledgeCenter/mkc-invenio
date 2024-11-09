@@ -22,7 +22,7 @@ services:
       - "INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3"
       - "S3_ENDPOINT_URL=https://0236038de169a8251e3492c5d72e7d02.r2.cloudflarestorage.com"
       - "S3_ACCESS_KEY_ID=539fb494fec5fd509223936189af3e2b"
-      - "S3_SECRET_ACCESS_KEY=SECRET"
+      - "S3_SECRET_ACCESS_KEY=ee0d4673cfb265052113dea80f710673969072d4af4bc5d5b605e0d42a81f123"
       - "S3_BUCKET_NAME=invenio"
       - "S3_REGION_NAME=us-east-1"
   frontend:
