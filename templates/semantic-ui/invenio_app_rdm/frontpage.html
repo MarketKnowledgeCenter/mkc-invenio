@@ -133,6 +133,7 @@
             width: 0;
             opacity: 1;
         }
+
         to {
             width: 100%;
             opacity: 1;
@@ -162,36 +163,42 @@
         width: auto;
     }
 
-    @media (max-width: 768px) {
+    .mobile-description {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 768px) {
         .description-container {
             width: 100%;
-            color: #4B5563;
+            padding: 0 1rem;
         }
 
         .typed-line {
-            font-weight: normal;
-            font-size: 20px;
-        }
-
-        .typed-line.line1 {
+            animation: none;
             width: 100%;
+            opacity: 1;
+            white-space: normal;
+            margin-bottom: 1rem;
+            font-size: 18px;
+            line-height: 1.4;
         }
 
-        .typed-line.line2 {
-            width: 100%;
-        }
-
+        .typed-line.line1,
+        .typed-line.line2,
         .typed-line.line3 {
-            width: 100%;
+            display: none;
         }
 
-        .hero-title {
-            font-size: 60px;
-            width: 50%;
-        }
-
-        .partners-section {
-            flex-direction: column;
+        .mobile-description {
+            font-weight: normal;
+            display: block;
+            white-space: normal;
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            opacity: 1;
+            text-align: left;
         }
     }
 </style>
@@ -199,6 +206,7 @@
 <div class="mkc-container">
     <main class="main-content">
         <div class="description-container">
+            <!-- DESKTOP -->
             <h2 class="typed-line line1">
                 <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones
                     clave</strong>
@@ -206,6 +214,13 @@
             <h2 class="typed-line line2">
                 en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y
                     actualizado</strong>.
+            </h2>
+
+            <!-- MOBILE -->
+            <h2 class="mobile-description">
+                <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones
+                    clave</strong> en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento
+                    relevante y actualizado. </strong>
             </h2>
         </div>
         <h2 class="typed-line line3">
