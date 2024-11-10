@@ -2,7 +2,7 @@
   overflow-x: hidden;
 }
 
-html.cover-page {
+.cover-page {
   background-color: linear-gradient(to bottom, #EFF6FF, #1E40AF);
 }
 
