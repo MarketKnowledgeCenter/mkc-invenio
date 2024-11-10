@@ -18,18 +18,33 @@ under the terms of the MIT License; see LICENSE file for more details.
 {%- block frontpage_search %}
 <style>
   .search-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .title-container {
+    display: flex;
+    gap: 14px;
+  }
+
+
+  @media (max-width: 768px) {
+    .title-container {
       display: flex;
-      justify-content: center;
-      width: 100%;
+      flex-direction: column;
+      font-size: 40px;
+      gap: 0;
+    }
   }
 </style>
 <div id="frontpage-search-bar" class="ui container fluid frontpage-header">
   <div class="ui container grid rel-mt-2">
     <div class="row" style="justify-content: center;">
-      <div style="display: flex; gap: 14px;">
+      <div class="title-container">
         {%- block frontpage_title %}
-        <h1 style="margin: 0;" class="hero-title">Market</h1>
-        <h1 style="margin: 0;" class="hero-title">Knowledge Center</h1>
+        <h1 style="color: #88B9C5; margin: 0; font-family: 'GlacialIndifference';" class="hero-title">MARKET</h1>
+        <h1 style="margin: 0; font-family: 'GlacialIndifference';" class="hero-title">KNOWLEDGE CENTER</h1>
       </div>
     </div>
     {%- endblock frontpage_title %}

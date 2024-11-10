@@ -13,3 +13,11 @@ html.cover-page {
 .ui.primary.buttons {
     background-color: #1E40AF;
 }
+
+@font-face {
+  font-family: "GlacialIndifference";
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/GlacialIndifference-Bold.ttf") format("truetype");
+}

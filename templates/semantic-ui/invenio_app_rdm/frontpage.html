@@ -129,11 +129,11 @@
     }
 
     @keyframes typing {
-        from { 
+        from {
             width: 0;
             opacity: 1;
         }
-        to { 
+        to {
             width: 100%;
             opacity: 1;
         }
@@ -163,10 +163,33 @@
     }
 
     @media (max-width: 768px) {
-        .hero-title {
-            font-size: 2rem;
+        .description-container {
+            width: 100%;
+            color: #4B5563;
         }
-        
+
+        .typed-line {
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        .typed-line.line1 {
+            width: 100%;
+        }
+
+        .typed-line.line2 {
+            width: 100%;
+        }
+
+        .typed-line.line3 {
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 60px;
+            width: 50%;
+        }
+
         .partners-section {
             flex-direction: column;
         }
@@ -175,16 +198,14 @@
 
 <div class="mkc-container">
     <main class="main-content">
-        <!-- <h1 class="description" style="max-width: 800px; color: #4B5563;">
-            <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong> en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>. Aquí usted puede:
-        </h1> -->
-
         <div class="description-container">
             <h2 class="typed-line line1">
-                <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong>
+                <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones
+                    clave</strong>
             </h2>
             <h2 class="typed-line line2">
-                en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>.
+                en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y
+                    actualizado</strong>.
             </h2>
         </div>
         <h2 class="typed-line line3">
@@ -193,7 +214,7 @@
         <div class="features-grid">
             <div class="feature-card">
                 <h3 class="feature-title">
-                    <a href="{{ url_for('invenio_search_ui.search') }}">Explorar y Consultar</a>
+                    <p>Explorar y Consultar</p>
                 </h3>
                 <p class="feature-description">
                     Acceda a reportes y estudios de mercado claves.
@@ -202,7 +223,7 @@
 
             <div class="feature-card">
                 <h3 class="feature-title">
-                    <a href="{{ url_for('invenio_app_rdm_records.deposit_create') }}">Contribuir</a>
+                    <p>Contribuir</p>
                 </h3>
                 <p class="feature-description">
                     Publique sus investigaciones y comparta el conocimiento con la comunidad.
@@ -211,7 +232,7 @@
 
             <div class="feature-card">
                 <h3 class="feature-title">
-                    <a href="{{ url_for('invenio_communities.communities_frontpage') }}">Unirse a una comunidad</a>
+                    <p>Unirse a una comunidad</p>
                 </h3>
                 <p class="feature-description">
                     Conecta con otros profesionales y amplia su red de conocimiento.
