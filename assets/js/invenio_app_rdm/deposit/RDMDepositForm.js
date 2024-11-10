@@ -110,6 +110,16 @@ export class RDMDepositForm extends Component {
       allowEmptyFiles,
     } = this.props;
     const customFieldsUI = this.config.custom_fields.ui;
+    console.log(record)
+    console.log(files)
+    console.log(permissions)
+    console.log(preselectedCommunity)
+    console.log(filesLocked)
+    console.log(recordRestrictionGracePeriod)
+    console.log(allowRecordRestriction)
+    console.log(groupsEnabled)
+    console.log(allowEmptyFiles)
+    console.log('--------------')
     return (
       <DepositFormApp
         config={this.config}

@@ -3,7 +3,8 @@
 }
 
 .cover-page {
-  background-color: linear-gradient(to bottom, #EFF6FF, #1E40AF);
+  background-image: @navbarBackgroundImage;
+  background-color: @navbarBackgroundColor;
 }
 
 .ui.signup.button {
