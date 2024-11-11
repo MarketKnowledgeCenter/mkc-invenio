@@ -1,5 +1,7 @@
 .html {
   overflow-x: hidden;
+  background-color: @navbarBackgroundColor;
+  background-image: @navbarBackgroundImage;
 }
 
 .cover-page {
