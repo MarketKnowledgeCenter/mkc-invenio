@@ -31,7 +31,7 @@
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 5rem;
         font-weight: bold;
         letter-spacing: -0.025em;
         line-height: 1.2;
@@ -129,11 +129,12 @@
     }
 
     @keyframes typing {
-        from { 
+        from {
             width: 0;
             opacity: 1;
         }
-        to { 
+
+        to {
             width: 100%;
             opacity: 1;
         }
@@ -162,29 +163,73 @@
         width: auto;
     }
 
-    @media (max-width: 768px) {
+    .mobile-description {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 768px) {
         .hero-title {
-            font-size: 2rem;
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            color: #1E40AF;
+            margin-bottom: 2rem;
         }
-        
-        .partners-section {
-            flex-direction: column;
+
+        .description-container {
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        .typed-line {
+            animation: none;
+            width: 100%;
+            opacity: 1;
+            white-space: normal;
+            margin-bottom: 1rem;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .typed-line.line1,
+        .typed-line.line2,
+        .typed-line.line3 {
+            display: none;
+        }
+
+        .mobile-description {
+            font-weight: normal;
+            display: block;
+            white-space: normal;
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            opacity: 1;
+            text-align: left;
         }
     }
 </style>
 
 <div class="mkc-container">
     <main class="main-content">
-        <!-- <h1 class="description" style="max-width: 800px; color: #4B5563;">
-            <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong> en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>. Aquí usted puede:
-        </h1> -->
-
         <div class="description-container">
+            <!-- DESKTOP -->
             <h2 class="typed-line line1">
-                <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones clave</strong>
+                <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones
+                    clave</strong>
             </h2>
             <h2 class="typed-line line2">
-                en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y actualizado</strong>.
+                en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento relevante y
+                    actualizado</strong>.
+            </h2>
+
+            <!-- MOBILE -->
+            <h2 class="mobile-description">
+                <strong>MKC</strong> es una plataforma dedicada a la <strong>recopilación y difusión de investigaciones
+                    clave</strong> en el campo de marketing, diseñadas para facilitar el acceso al <strong>conocimiento
+                    relevante y actualizado. </strong>
             </h2>
         </div>
         <h2 class="typed-line line3">
@@ -193,7 +238,7 @@
         <div class="features-grid">
             <div class="feature-card">
                 <h3 class="feature-title">
-                    <a href="{{ url_for('invenio_search_ui.search') }}">Explorar y Consultar</a>
+                    <p>Explorar y Consultar</p>
                 </h3>
                 <p class="feature-description">
                     Acceda a reportes y estudios de mercado claves.
@@ -202,7 +247,7 @@
 
             <div class="feature-card">
                 <h3 class="feature-title">
-                    <a href="{{ url_for('invenio_app_rdm_records.deposit_create') }}">Contribuir</a>
+                    <p>Contribuir</p>
                 </h3>
                 <p class="feature-description">
                     Publique sus investigaciones y comparta el conocimiento con la comunidad.
@@ -211,7 +256,7 @@
 
             <div class="feature-card">
                 <h3 class="feature-title">
-                    <a href="{{ url_for('invenio_communities.communities_frontpage') }}">Unirse a una comunidad</a>
+                    <p>Unirse a una comunidad</p>
                 </h3>
                 <p class="feature-description">
                     Conecta con otros profesionales y amplia su red de conocimiento.

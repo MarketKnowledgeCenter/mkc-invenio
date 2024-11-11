@@ -1,5 +1,12 @@
-html.cover-page {
-  background-color: linear-gradient(to bottom, #EFF6FF, #1E40AF);
+.html {
+  overflow-x: hidden;
+  background-color: @navbarBackgroundColor;
+  background-image: @navbarBackgroundImage;
+}
+
+.cover-page {
+  background-image: @navbarBackgroundImage;
+  background-color: @navbarBackgroundColor;
 }
 
 .ui.signup.button {
@@ -12,4 +19,12 @@ html.cover-page {
 
 .ui.primary.buttons {
     background-color: #1E40AF;
+}
+
+@font-face {
+  font-family: "GlacialIndifference";
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/GlacialIndifference-Bold.ttf") format("truetype");
 }
